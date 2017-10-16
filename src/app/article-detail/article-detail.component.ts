@@ -32,4 +32,9 @@ export class ArticleDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.articleService.update(this.article)
+      .then(() => this.goBack());
+  }
+
 }

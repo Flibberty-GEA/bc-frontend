@@ -1,10 +1,20 @@
 <h2>All articles</h2>
+<div>
+  <label>Article title:</label> <input #title />
+  <label>Article content:</label> <input #content />
+  <button (click)="add(title.value, content.value); title.value=''; content.value=''">
+    Add
+  </button>
+</div>
 <ul class="articles">
   <li
     *ngFor="let article of articles"
     [class.selected]="article === selectedArticle"
     (click)="onSelect(article)">
-    <span class="badge">{{article.id}}</span> {{article.title}}
+    <span class="badge">{{article.id}}</span>
+    <span>{{article.title}}</span>
+    <button class="delete"
+            (click)="delete(article); $event.stopPropagation()">x</button>
   </li>
 </ul>
 <div *ngIf="selectedArticle">
