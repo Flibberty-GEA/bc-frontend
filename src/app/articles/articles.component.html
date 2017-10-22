@@ -7,10 +7,9 @@
   </button>
 </div>
 <ul class="articles">
-  <li
-    *ngFor="let article of articles"
-    [class.selected]="article === selectedArticle"
-    (click)="onSelect(article)">
+  <li *ngFor="let article of articles"
+      [class.selected]="article === selectedArticle"
+      (click)="onSelect(article)">
     <span class="badge">{{article.id}}</span>
     <span>{{article.title}}</span>
     <button class="delete"
