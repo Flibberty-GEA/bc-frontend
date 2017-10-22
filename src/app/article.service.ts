@@ -44,7 +44,13 @@ export class ArticleService {
 
   create(title: string, content: string): Promise<Article> {
     return this.http
-      .post(this.articlesUrl, JSON.stringify({title: title, content: content}), {headers: this.headers})
+      .post(this.articlesUrl,
+        JSON.stringify({
+          title: title,
+          content: content,
+          author: 'Jeka Jmeka', // TODO Edit this later
+          publicationDate: '2017-10-17'}), // TODO Edit this later
+        {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Article)
       .catch(this.handleError);
