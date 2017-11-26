@@ -10,6 +10,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { HomepageComponent } from './homepage/homepage.component';
 
 import { ArticleService } from './article.service';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ArticleService } from './article.service';
     AppComponent,
     ArticleDetailComponent,
     ArticlesComponent,
-    HomepageComponent
+    HomepageComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
