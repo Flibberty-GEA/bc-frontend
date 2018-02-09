@@ -1,0 +1,10 @@
+<div id="{{title}}" class="form-group no-margin no-padding">
+  <p class="textarea-label text-content" style="margin-top: 8px;">{{title}}</p>
+  <div #box contenteditable="true"
+       class="textarea-container"
+       placeholder="Enter Message Here"
+       (input)="onInput($event)"
+       [innerHTML]="message"></div>
+</div>
+
+
