@@ -2,10 +2,10 @@
   <h2>{{article.title}} details!</h2>
   <div><label>id: </label>{{article.id}}</div>
   <div><label>title: </label>{{article.title}}</div>
-  <div><label>content: </label>{{article.content}}</div>
+  <div><label>content: </label>{{article.text}}</div>
   <div>
     <label>Edit content:
-      <textarea [(ngModel)]="article.content" placeholder="content"></textarea>
+      <textarea [(ngModel)]="article.text" placeholder="content"></textarea>
     </label>
 
   </div>

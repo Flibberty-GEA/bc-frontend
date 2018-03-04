@@ -1,5 +1,7 @@
-export class Article{
+export class Article {
   id: number;
   title: string;
-  content: string;
+  text: string;
+  dateCreated: Date;
+  lastUpdated: Date;
 }

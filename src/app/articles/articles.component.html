@@ -1,21 +1,35 @@
 <h2>All articles</h2>
-<div>
-  <label>Article title:</label> <input #title />
-  <label>Article content:</label> <input #content />
-  <button (click)="add(title.value, content.value); title.value=''; content.value=''">
-    Add
-  </button>
-</div>
-<ul class="articles">
-  <li *ngFor="let article of articles"
-      [class.selected]="article === selectedArticle"
-      (click)="onSelect(article)">
-    <span class="badge">{{article.id}}</span>
+<!--<div>-->
+  <!--<label>Article title:</label> <input #title />-->
+  <!--<label>Article content:</label> <input #content />-->
+  <!--<button (click)="add(title.value, content.value); title.value=''; content.value=''">-->
+    <!--Add-->
+  <!--</button>-->
+<!--</div>-->
+<div *ngFor="let article of articles"
+     [class.selected]="article === selectedArticle" class="row"
+     (click)="onSelect(article)">
+  <div class="col-10">
     <span>{{article.title}}</span>
-    <button class="delete"
-            (click)="delete(article); $event.stopPropagation()">x</button>
-  </li>
-</ul>
+  </div>
+  <div class="col-2">
+    <i class="fa fa-times"
+       aria-hidden="true"
+       (click)="delete(article); $event.stopPropagation()"></i>
+    <!--<button class="delete"-->
+            <!--(click)="delete(article); $event.stopPropagation()">x</button>-->
+  </div>
+  <div class="col-12">
+    <span>{{article.text}}</span>
+  </div>
+  <div class="col-6">
+    <span>{{article.dateCreated | date:'MMM d, y'}}</span>
+  </div>
+  <div class="col-6">
+    <span>{{article.lastUpdated | date:'MMM d, y'}}</span>
+  </div>
+</div>
+
 <div *ngIf="selectedArticle">
   <h2>
     {{selectedArticle.title | uppercase}}
