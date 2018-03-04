@@ -1,4 +1,6 @@
-<h2>All articles</h2>
+<div class="row pt-3">
+  <h1 class="col text-center">All articles</h1>
+</div>
 <!--<div>-->
   <!--<label>Article title:</label> <input #title />-->
   <!--<label>Article content:</label> <input #content />-->
@@ -7,33 +9,34 @@
   <!--</button>-->
 <!--</div>-->
 <div *ngFor="let article of articles"
-     [class.selected]="article === selectedArticle" class="row"
-     (click)="onSelect(article)">
+     class="row article-box"
+     [class.selected]="article === selectedArticle"
+     (mouseover)="onSelect(article)">
   <div class="col-10">
-    <span>{{article.title}}</span>
+    <h2>{{article.title}}</h2>
   </div>
   <div class="col-2">
     <!--<i class="fa fa-times"-->
        <!--aria-hidden="true"-->
        <!--(click)="delete(article); $event.stopPropagation()"></i>-->
   </div>
-  <div class="col-12">
-    <span>{{article.text.slice(0, 600)}}</span>
+  <div class="col-12 pb-2">
+    <span>{{article.text.slice(0, 580)+'...'}}</span>
   </div>
-  <div class="col-6">
-    <span>{{article.dateCreated | date:'MMM d, y'}}</span>
+  <div class="col-6 text-left">
+    <span>Створено {{article.dateCreated | date:'MMM d, y'}}</span>
   </div>
-  <div class="col-6">
-    <span>{{article.lastUpdated | date:'MMM d, y'}}</span>
+  <div class="col-6 text-right">
+    <span>Відредаговано {{article.lastUpdated | date:'MMM d, y'}}</span>
   </div>
-  <div class="col-12">
+  <div class="col-12 p-2 text-center">
     <button class="btn bc-btn" (click)="gotoDetail()">Читати</button>
   </div>
 </div>
 
-<div *ngIf="selectedArticle">
-  <h2>
-    {{selectedArticle.title | uppercase}}
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
-</div>
+<!--<div *ngIf="selectedArticle">-->
+  <!--<h2>-->
+    <!--{{selectedArticle.title | uppercase}}-->
+  <!--</h2>-->
+  <!--<button (click)="gotoDetail()">View Details</button>-->
+<!--</div>-->
