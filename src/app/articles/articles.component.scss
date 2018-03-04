@@ -1,8 +1,8 @@
 @import "../../assets/styles/color-scheme";
 
 .selected {
-  background-color: #CFD8DC !important;
-  color: white;
+  background-color: $yellow !important;
+  color: $darker-gray;
 }
 .article-box {
   border-bottom: 1px solid $dark-gray;
