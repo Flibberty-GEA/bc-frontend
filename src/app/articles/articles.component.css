@@ -2,6 +2,13 @@
   background-color: #CFD8DC !important;
   color: white;
 }
+.bc-btn {
+  padding: .2rem .8rem;
+  border-color: #225A9B;
+  border-radius: 4px;
+  background-color: #fff !important;
+  color: #303030;
+}
 /*.articles {*/
   /*margin: 0 0 2em 0;*/
   /*list-style-type: none;*/
