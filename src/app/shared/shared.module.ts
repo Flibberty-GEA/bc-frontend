@@ -11,10 +11,10 @@ import { TextareaComponent } from './components/textarea/textarea.component';
 @NgModule({
   imports: [
     FormsModule,
-    CommonModule,
-    TextareaComponent
+    CommonModule
   ],
   declarations: [
+    TextareaComponent
   ],
   exports: [
     FormsModule,
