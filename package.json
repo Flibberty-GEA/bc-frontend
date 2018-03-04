@@ -4,11 +4,16 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
-    "build": "ng build",
-    "test": "ng test",
+    "start": "npm run node-sass & ng serve",
+    "start:watch": "npm run node-sass & ng serve --open & onchange './src/**/*.scss' -- npm run node-sass",
+    "build:prod": "npm run clean:dist & npm run node-sass & ng build --prod",
+    "test": "npm run node-sass & ng test --code-coverage --watch false -sm=false",
+    "test:watch": "npm run node-sass & ng test --code-coverage --browsers=Chrome -sm=false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "node-sass": "node-sass ./src -o ./src",
+    "clean:dist": "npm run rimraf -- dist",
+    "rimraf": "rimraf"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +28,8 @@
     "@angular/router": "^4.2.4",
     "font-awesome": "^4.7.0",
     "core-js": "^2.4.1",
+    "node-sass": "^4.6.1",
+    "onchange": "^3.2.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
