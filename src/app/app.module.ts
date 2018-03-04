@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
@@ -25,6 +26,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
+    CoreModule,
     SharedModule,
     BrowserModule,
     FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
