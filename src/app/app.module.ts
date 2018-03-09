@@ -7,13 +7,14 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { HomepageComponent } from './homepage/homepage.component';
 
 import { ArticleService } from './article.service';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { SignUpComponent } from './authentication/sign-up/sign-up.component';
+import { SignInComponent } from './authentication/sign-in/sign-in.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ArticlesComponent,
     HomepageComponent,
     SignUpComponent,
+    SignInComponent,
     NavbarComponent
   ],
   imports: [
